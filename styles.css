@@ -345,6 +345,45 @@ h2 em {
   line-height: 1.8;
 }
 
+.personal-section {
+  border-top: 1px solid var(--line);
+}
+
+.personal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.personal-card {
+  min-height: 160px;
+  padding: 25px;
+  border: 1px solid var(--line);
+}
+
+.personal-card h3 {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 9px 13px;
+  border: 1px solid #dcdad2;
+  border-radius: 30px;
+  color: #555950;
+  font-size: 11px;
+}
+
 .work-section {
   background: #f0efe9;
 }
@@ -772,6 +811,14 @@ h2 em {
     margin-top: 48px;
   }
 
+  .personal-grid {
+    gap: 14px;
+  }
+
+  .personal-card {
+    padding: 20px 16px;
+  }
+
   .project-art {
     height: 270px;
   }
@@ -828,6 +875,10 @@ h2 em {
   .values {
     grid-template-columns: 1fr;
     gap: 26px;
+  }
+
+  .personal-grid {
+    grid-template-columns: 1fr;
   }
 
   .value-card h3 {
