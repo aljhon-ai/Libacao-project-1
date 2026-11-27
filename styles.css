@@ -290,7 +290,28 @@ h2 em {
 }
 
 .intro {
-  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  background: #edf0e9;
+}
+
+.intro::before {
+  width: 540px;
+  height: 540px;
+  position: absolute;
+  top: -345px;
+  right: -125px;
+  border: 1px solid #dce3d8;
+  border-radius: 50%;
+  content: "";
+}
+
+.intro .page-width {
+  position: relative;
+}
+
+.intro .eyebrow {
+  margin-bottom: 27px;
 }
 
 .intro-content,
@@ -301,12 +322,21 @@ h2 em {
   gap: 90px;
 }
 
+.intro-content {
+  align-items: center;
+  gap: 70px;
+}
+
 .intro h2,
 .section-heading h2,
 .contact-content h2 {
   margin-bottom: 0;
   font-size: clamp(38px, 4.5vw, 55px);
   line-height: 1.17;
+}
+
+.intro h2 {
+  font-size: clamp(44px, 5vw, 63px);
 }
 
 .intro-aside p,
@@ -317,28 +347,50 @@ h2 em {
   line-height: 1.85;
 }
 
+.intro-aside {
+  padding-left: 25px;
+  border-left: 1px solid #d5ddd2;
+}
+
 .values {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 42px;
-  margin-top: 69px;
-  padding-top: 25px;
-  border-top: 1px solid var(--line);
+  gap: 16px;
+  margin-top: 57px;
 }
 
 .value-number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8dfd4;
+  border-radius: 50%;
   color: var(--green);
   font-size: 10px;
 }
 
+.value-card {
+  min-height: 158px;
+  padding: 22px;
+  border: 1px solid #e2e6df;
+  background: #f7f7f2;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+  border-color: #b6c5b5;
+}
+
 .value-card h3 {
-  margin: 18px 0 10px;
+  margin: 18px 0 8px;
   font-size: 15px;
   font-weight: 600;
 }
 
 .value-card p {
-  max-width: 290px;
+  max-width: 300px;
   margin-bottom: 0;
   color: #777a72;
   font-size: 11px;
@@ -802,13 +854,18 @@ h2 em {
     gap: 23px;
   }
 
+  .intro-content {
+    gap: 25px;
+  }
+
   .intro-aside {
     max-width: 470px;
+    padding-left: 17px;
   }
 
   .values {
-    gap: 25px;
-    margin-top: 48px;
+    gap: 14px;
+    margin-top: 40px;
   }
 
   .personal-grid {
@@ -875,6 +932,10 @@ h2 em {
   .values {
     grid-template-columns: 1fr;
     gap: 26px;
+  }
+
+  .value-card {
+    min-height: 0;
   }
 
   .personal-grid {
