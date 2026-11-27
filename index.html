@@ -12,7 +12,12 @@
   <div class="site-shell">
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Aljhon Libacao, home">AL<span>.</span></a>
-    <nav class="navigation" aria-label="Main navigation">
+    <input class="menu-toggle-input" type="checkbox" id="menu-toggle" aria-label="Toggle navigation" aria-controls="main-navigation">
+    <label class="menu-toggle" for="menu-toggle">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
+      <span class="sr-only">Toggle navigation</span>
+    </label>
+    <nav class="navigation" id="main-navigation" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#work">Selected work</a>
