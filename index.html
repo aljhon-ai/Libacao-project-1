@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <input class="theme-toggle-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+  <div class="site-shell">
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Aljhon Libacao, home">AL<span>.</span></a>
     <nav class="navigation" aria-label="Main navigation">
@@ -16,6 +18,12 @@
       <a href="#work">Selected work</a>
       <a href="#contact">Contact</a>
     </nav>
+    <label class="theme-switch" for="theme-toggle">
+      <span class="sr-only">Toggle dark mode</span>
+      <span class="theme-icon" aria-hidden="true">☼</span>
+      <span class="theme-switch-track" aria-hidden="true"><span></span></span>
+      <span class="theme-icon" aria-hidden="true">☾</span>
+    </label>
     <a class="availability" href="#contact"><span></span> Available for projects</a>
   </header>
 
@@ -191,5 +199,6 @@
     <span>Designed with intention. © 2026 Aljhon Libacao</span>
     <a href="#home">Back to top ↑</a>
   </footer>
+  </div>
 </body>
 </html>
