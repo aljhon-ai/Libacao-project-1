@@ -34,6 +34,11 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+
 .page-width {
   width: min(var(--content-width), calc(100% - 96px));
   margin-inline: auto;
@@ -53,6 +58,11 @@ a {
   font-size: 23px;
   font-weight: 700;
   letter-spacing: -2px;
+  transition: transform 180ms ease;
+}
+
+.wordmark:hover {
+  transform: translateY(-2px);
 }
 
 .wordmark span {
@@ -79,6 +89,30 @@ a {
   transition: color 180ms ease;
 }
 
+.navigation a {
+  position: relative;
+  padding-block: 8px;
+}
+
+.navigation a::after {
+  height: 1px;
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  background: var(--green);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 200ms ease;
+}
+
+.navigation a:hover::after,
+.navigation a:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .navigation a:hover,
 .social-links a:hover,
 .site-footer a:hover {
@@ -90,6 +124,11 @@ a {
   align-items: center;
   gap: 9px;
   color: var(--muted);
+  transition: color 180ms ease;
+}
+
+.availability:hover {
+  color: var(--ink);
 }
 
 .availability span {
@@ -98,6 +137,12 @@ a {
   border-radius: 50%;
   background: #76a878;
   box-shadow: 0 0 0 4px #76a8781d;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.availability:hover span {
+  box-shadow: 0 0 0 6px #76a87828;
+  transform: scale(1.08);
 }
 
 .hero {
@@ -181,7 +226,7 @@ h2 em {
   justify-content: center;
   gap: 23px;
   font-size: 11px;
-  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .button-dark {
@@ -191,6 +236,8 @@ h2 em {
 
 .button-dark:hover {
   background: var(--green);
+  box-shadow: 0 8px 18px #20231f20;
+  transform: translateY(-2px);
 }
 
 .text-link {
@@ -224,6 +271,16 @@ h2 em {
   position: relative;
   overflow: hidden;
   background: #e6e9dc;
+}
+
+.profile-image {
+  transition: transform 500ms cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (hover: hover) {
+  .hero-art:hover .profile-image {
+    transform: scale(1.035);
+  }
 }
 
 .hero-art::after {
@@ -412,6 +469,12 @@ h2 em {
   min-height: 160px;
   padding: 25px;
   border: 1px solid var(--line);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.personal-card:hover {
+  border-color: #b6c5b5;
+  transform: translateY(-3px);
 }
 
 .personal-card h3 {
@@ -435,6 +498,14 @@ h2 em {
   border-radius: 30px;
   color: #555950;
   font-size: 11px;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.tag-list li:hover {
+  transform: translateY(-2px);
+  border-color: var(--green);
+  background: var(--green);
+  color: white;
 }
 
 .work-section {
@@ -476,7 +547,7 @@ h2 em {
   height: 300px;
   position: relative;
   overflow: hidden;
-  transition: filter 200ms ease;
+  transition: filter 240ms ease;
 }
 
 .project-card:hover .project-art {
@@ -708,6 +779,11 @@ h2 em {
   margin: 0 0 5px;
   font-size: 14px;
   font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.project-card:hover .project-info h3 {
+  color: var(--green);
 }
 
 .project-info p {
@@ -725,13 +801,14 @@ h2 em {
   border: 1px solid #d5d4cc;
   border-radius: 50%;
   font-size: 13px;
-  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .project-card:hover .project-arrow {
   border-color: var(--ink);
   background: var(--ink);
   color: white;
+  transform: translate(2px, -2px);
 }
 
 .button-outline {
@@ -742,7 +819,9 @@ h2 em {
 .button-outline:hover {
   border-color: var(--ink);
   background: var(--ink);
+  box-shadow: 0 8px 18px #20231f20;
   color: white;
+  transform: translateY(-2px);
 }
 
 .contact-section {
@@ -1011,5 +1090,16 @@ h2 em {
   *::before,
   *::after {
     transition-duration: .01ms !important;
+  }
+
+  .wordmark:hover,
+  .button-dark:hover,
+  .button-outline:hover,
+  .value-card:hover,
+  .personal-card:hover,
+  .tag-list li:hover,
+  .project-card:hover .project-arrow,
+  .hero-art:hover .profile-image {
+    transform: none;
   }
 }
